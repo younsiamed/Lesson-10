@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(DynamicLibCMake)
+add_library(DynamicLibCMake SHARED DynamicLibCMake/leaver.cpp)
+target_compile_definitions(DynamicLibCMake PRIVATE DYNAMICLIBCMAKE_EXPORTS)
+target_include_directories(DynamicLibCMake PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_executable(DynamicLibCMakeApp DynamicLibCMakeApp/DynamicLibCMakeApp.cpp)
+target_link_libraries(DynamicLibCMakeApp PRIVATE DynamicLibCMake)
