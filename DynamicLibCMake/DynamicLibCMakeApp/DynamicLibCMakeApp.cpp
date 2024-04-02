@@ -1,8 +1,10 @@
 ﻿#include <iostream>
-#include "DynamicLibCMake/leaver.h"
+#include <windows.h>
+#include "DynamicLibCMake/Leaver.h"
 
 int main() {
-    setlocale(LC_ALL, "Russian");
+    SetConsoleOutputCP(65001);
+    std::locale::global(std::locale(""));
     std::string name;
     std::cout << "Введите имя: ";
     std::cin >> name;
